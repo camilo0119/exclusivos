@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Mi tienda - Cartagena</title>
+    </head>
+    <body>
+        {% for category in categories %}
+
+                <h2>{{ category.name }}</h2>
+                {% for product in category.product_set.all %}
+                    {{ product.id }} - <a href="/product/{{ product.id }}">{{ product.name }}</a><br/>
+                {% endfor %}
+            {% endfor %}
+
+    </body>
+</html>
